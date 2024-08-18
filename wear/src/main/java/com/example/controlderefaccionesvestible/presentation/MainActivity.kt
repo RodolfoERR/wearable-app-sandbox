@@ -73,9 +73,14 @@ class MainActivity : ComponentActivity() {
                 }
             }
 
-            override fun onError(message: String, code: String, e: Exception) {
-                Log.e("Pusher", "Error al conectar! código: $code, mensaje: $message, excepción: $e")
+            override fun onError(message: String, code: String?, e: Exception?) {
+                if (code != null) {
+                    Log.e("Pusher", "Error al conectar! código: $code, mensaje: $message, excepción: ${e?.message ?: "No hay excepción"}")
+                } else {
+                    Log.e("Pusher", "Error al conectar! código desconocido, mensaje: $message, excepción: ${e?.message ?: "No hay excepción"}")
+                }
             }
+
         }, ConnectionState.ALL)
     }
 
