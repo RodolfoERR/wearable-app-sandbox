@@ -106,7 +106,7 @@ class MainActivity : ComponentActivity() {
                     Log.e("Pusher", "Error al procesar el evento: ${e.message}")
                 }
             }
-        })
+        })//Jhon pinche mochila
 
         Log.i("Pusher", "Intentando suscribirse al canal controldealmacen...")
     }
